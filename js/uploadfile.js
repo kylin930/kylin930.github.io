@@ -11,7 +11,7 @@ document.getElementById('uploadForm').addEventListener('submit', function (e) {
         }
 
         // FetchAPI发送请求
-        fetch('cubyup.devlab.icu/upload', {
+        fetch('https://cubyup.devlab.icu/upload', {
             method: 'POST',
             body: formData
         })
