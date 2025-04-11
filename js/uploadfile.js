@@ -1,22 +1,17 @@
 document.getElementById('uploadForm').addEventListener('submit', function (e) {
-        e.preventDefault(); // 阻止表单默认提交行为
-
+        e.preventDefault();
         const formData = new FormData();
         const pathInput = document.getElementById('path');
         const filesInput = document.getElementById('files');
-
-        // 添加自定义路径到 FormData
         if (pathInput.value.trim()) {
             formData.append('path', pathInput.value.trim());
         }
-
-        // 添加文件到 FormData
         for (let file of filesInput.files) {
             formData.append('files', file);
         }
 
-        // 使用 Fetch API 发送请求
-        fetch('/upload', {
+        // FetchAPI发送请求
+        fetch('cubyup.devlab.icu/upload', {
             method: 'POST',
             body: formData
         })
@@ -32,7 +27,7 @@ document.getElementById('uploadForm').addEventListener('submit', function (e) {
                 `;
             } else {
                 resultDiv.innerHTML = `
-                    <p style="color: red;"><strong>错误：</strong> ${data.message}</p>
+                    <p><strong>错误：</strong> ${data.message}</p>
                 `;
             }
         })
@@ -40,7 +35,7 @@ document.getElementById('uploadForm').addEventListener('submit', function (e) {
             console.error('上传失败:', error);
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = `
-                <p style="color: red;">上传失败，请稍后重试。</p>
+                <p>上传失败，请稍后重试</p>
             `;
         });
     });
