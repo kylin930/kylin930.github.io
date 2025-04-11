@@ -1,3 +1,13 @@
+// 显示路径提示框
+function showPathAlert(path) {
+    if (path) {
+        mdui.alert(`您选择了保存路径：<code>${path}</code>`, '提示');
+    } else {
+        mdui.alert('将使用默认路径（按日期）保存文件', '提示');
+    }
+}
+
+// 文件上传逻辑
 function uploadFiles() {
     const form = document.getElementById('uploadForm');
     const formData = new FormData(form);
