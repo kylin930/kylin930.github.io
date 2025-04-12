@@ -1,1 +1,7 @@
-
+.footer {
+    height: 50px;
+    background-color: #eaeaea;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+  }
