@@ -31,7 +31,7 @@ document.getElementById('uploadForm').addEventListener('submit', function (e) {
                         <p><strong>状态：</strong> 成功</p>
                         <p><strong>消息：</strong> ${response.message}</p>
                         <p><strong>上传的文件：</strong> ${response.uploaded_files.join(', ')}</p>
-                        <p><strong>存储路径：</strong><a href="https://cubylist.devlab.icu/listdir?path=${response.storage_path}"> ${response.storage_path}</p>
+                        <p><strong>存储路径：</strong><a href="https://cubylist.devlab.icu/listdir?path=${response.storage_path}"> ${response.storage_path}</a></p>
                     `;
                 } else {
                     resultDiv.innerHTML = `
